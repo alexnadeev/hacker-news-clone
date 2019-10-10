@@ -1,11 +1,17 @@
+from django.contrib.auth import views
 from django.urls import path
+from django.contrib.auth import views as user_views
 from . import views
+
 
 urlpatterns = [
     #Alex
     path('home', views.home, name='home'),
-    path('signup', views.signUp, name='signUp'),
-    path('login', views.login, name='login')
+    path('signup', views.signUp, name='signup'),
+    path('login/', user_views.LoginView.as_view(template_name="hackapp/login.html"), name="login"),
+    path('logout/', user_views.LogoutView.as_view(template_name="hackapp/logout.html"), name="logout"),
+    path('accounts/profile/', views.profile, name='profile')
+    
     # path('logout', views.logout, name='logout'),
     
     # #Jason
