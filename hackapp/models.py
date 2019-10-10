@@ -11,6 +11,7 @@ class Users(models.Model):
 class Posts(models.Model):
     author = models.ForeignKey('Users', on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
+    url = models.CharField(max_length=50, default="null")
     body = models.TextField(max_length=5000)
     vote_count = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
