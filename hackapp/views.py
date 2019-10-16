@@ -50,7 +50,7 @@ def view_post(request):
     acct = request.user
     all_posts = Posts.objects.all()
     post_counter = 1 
-    print("UP HEREEEEEEE::   ", all_posts[5].author)
+    #print("UP HEREEEEEEE::   ", all_posts[0].author)
     print("Actual:   ", acct)
     context = {"account": acct, "all_posts": all_posts, "post_counter": post_counter}
     return render(request, 'home.html', context)
